@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Routes, Route, useLocation, useNavigate} from 'react-router-dom';
-import { fruits } from './data/fruits';
 import { CartProvider } from './contexts/CartContext';
 import Header from './components/Header';
 import Cart from './components/Cart';
@@ -12,18 +11,22 @@ import SeasonalFruitsPage from './pages/SeasonalFruitsPage';
 import AboutPage from './pages/AboutPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import DetailFruitPage from './pages/DetailFruitPage';
+import { fruits } from './data/fruits';
+import { Fruit } from './types';
 
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const [fruitSelect, setFruitSelect] = useState(fruits[0]);
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
   };
   const navigate = useNavigate();
-  const redicrectToAllFruit = () => {
-    navigate('/all-fruits');
-};
+  const redirect = (url: string) => {
+    navigate(url);
+  };
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -50,12 +53,13 @@ function App() {
         
         <main className={isAuthPage ? "flex-grow" : "flex-grow"}>
           <Routes>
-            <Route path="/" element={<HomePage redicrectToAllFruit = {redicrectToAllFruit}/>} />
-            <Route path="/all-fruits" element={<AllFruitsPage />} />
-            <Route path="/seasonal" element={<SeasonalFruitsPage />} />
+            <Route path="/" element={<HomePage redirect = {redirect} fruitSelect={(fruit: Fruit)=> setFruitSelect(fruit)}/>} />
+            <Route path="/all-fruits" element={<AllFruitsPage redirect = {redirect} fruitSelect={(fruit: Fruit)=> setFruitSelect(fruit)}/>} />
+            <Route path="/seasonal" element={<SeasonalFruitsPage redirect = {redirect} fruitSelect={(fruit: Fruit)=> setFruitSelect(fruit)}/>} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+            <Route path="/details" element={<DetailFruitPage fruitSelect={fruitSelect}/>} />
           </Routes>
         </main>
         

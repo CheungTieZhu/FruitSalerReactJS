@@ -1,8 +1,9 @@
 import React from 'react';
 interface HeroProps {
-  redicrectToAllFruit: () => void;
+  redirect: (url: string) => void;
 }
-const Hero: React.FC<HeroProps> = ({redicrectToAllFruit}) => {
+
+const Hero: React.FC<HeroProps> = ({redirect}) => {
   return (
     <section className="bg-gradient-to-r from-green-600 to-green-700 text-white">
       <div className="container mx-auto px-4 py-12 md:py-20">
@@ -14,7 +15,7 @@ const Hero: React.FC<HeroProps> = ({redicrectToAllFruit}) => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
-              onClick= {redicrectToAllFruit}
+              onClick= {() => redirect('/All-fruits')}
               className="bg-white text-green-700 hover:bg-green-50 transition py-3 px-6 rounded-lg font-medium">
                 立即选购
               </button>

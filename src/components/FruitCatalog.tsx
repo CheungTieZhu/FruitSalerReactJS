@@ -5,9 +5,11 @@ import { categories } from '../data/fruits';
 
 interface FruitCatalogProps {
   fruits: Fruit[];
+  redirect: (url: string) => void;
+  fruitSelect: (fruit: Fruit) => void;
 }
 
-const FruitCatalog: React.FC<FruitCatalogProps> = ({ fruits }) => {
+const FruitCatalog: React.FC<FruitCatalogProps> = ({ fruits,redirect,fruitSelect }) => {
   const [activeCategory, setActiveCategory] = useState<string>('全部');
   const [filteredFruits, setFilteredFruits] = useState<Fruit[]>(fruits);
   
@@ -54,7 +56,7 @@ const FruitCatalog: React.FC<FruitCatalogProps> = ({ fruits }) => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredFruits.map(fruit => (
-            <FruitCard key={fruit.id} fruit={fruit} />
+            <FruitCard key={fruit.id} fruit={fruit} redirect={redirect} fruitSelect={fruitSelect}/>
           ))}
         </div>
         

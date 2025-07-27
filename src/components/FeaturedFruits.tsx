@@ -5,9 +5,11 @@ import { useCart } from '../contexts/CartContext';
 
 interface FeaturedFruitsProps {
   fruits: Fruit[];
+  redirect: (url: string) => void;
+  fruitSelect: (fruit: Fruit) => void;
 }
 
-const FeaturedFruits: React.FC<FeaturedFruitsProps> = ({ fruits }) => {
+const FeaturedFruits: React.FC<FeaturedFruitsProps> = ({ fruits,redirect,fruitSelect }) => {
   const { addToCart } = useCart();
   const seasonalFruits = fruits.filter(fruit => fruit.seasonal);
   
@@ -56,7 +58,11 @@ const FeaturedFruits: React.FC<FeaturedFruitsProps> = ({ fruits }) => {
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {seasonalFruits.map(fruit => (
-            <div 
+            <div
+              onClick={()=>{
+                fruitSelect(fruit)
+                redirect('details')
+              }}
               key={fruit.id} 
               className="flex-none w-72 snap-start bg-white rounded-lg shadow-md overflow-hidden transform transition hover:scale-[1.02]"
             >

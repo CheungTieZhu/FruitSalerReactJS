@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { fruits, categories } from '../data/fruits';
 import FruitCard from '../components/FruitCard';
+import { Fruit } from '../types';
 
-const AllFruitsPage: React.FC = () => {
+interface AllFruitsPageProps {
+  fruitSelect: (fruit: Fruit) => void;
+  redirect: (url: string) => void;
+}
+const AllFruitsPage: React.FC<AllFruitsPageProps> = ({fruitSelect,redirect}) => {
   const [activeCategory, setActiveCategory] = useState<string>('全部');
   const [sortOption, setSortOption] = useState<string>('default');
-  
   // 筛选和排序水果
   const filteredAndSortedFruits = fruits
     .filter(fruit => activeCategory === '全部' || fruit.category === activeCategory)
@@ -74,7 +78,7 @@ const AllFruitsPage: React.FC = () => {
       {/* 水果网格 */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {filteredAndSortedFruits.map((fruit) => (
-          <FruitCard key={fruit.id} fruit={fruit} />
+          <FruitCard key={fruit.id} fruit={fruit} redirect={redirect} fruitSelect={fruitSelect}/>
         ))}
       </div>
       

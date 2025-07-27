@@ -1,18 +1,25 @@
 import React from 'react';
-import { ShoppingCart, Plus } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import { Fruit } from '../types';
 import { useCart } from '../contexts/CartContext';
 
 interface FruitCardProps {
   fruit: Fruit;
+  redirect: (url: string) => void;
+  fruitSelect: (fruit: Fruit) => void;
 }
 
-const FruitCard: React.FC<FruitCardProps> = ({ fruit }) => {
+const FruitCard: React.FC<FruitCardProps> = ({ fruit, redirect, fruitSelect }) => {
   const { addToCart } = useCart();
   
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 flex flex-col">
-      <div className="relative h-48 overflow-hidden">
+      <div
+      onClick={()=>{
+        fruitSelect(fruit)
+        redirect('details')
+      }}
+      className="relative h-48 overflow-hidden">
         <img 
           src={fruit.image} 
           alt={fruit.name}

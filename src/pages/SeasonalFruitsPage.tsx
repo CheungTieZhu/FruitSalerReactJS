@@ -1,8 +1,14 @@
 import React from 'react';
 import { fruits } from '../data/fruits';
 import FruitCard from '../components/FruitCard';
+import { Fruit } from '../types';
 
-const SeasonalFruitsPage: React.FC = () => {
+interface  SeasonalFruitsPageProps {
+  redirect: (url: string) => void;
+  fruitSelect: (fruit: Fruit) => void;
+}
+
+const SeasonalFruitsPage: React.FC<SeasonalFruitsPageProps> = ({redirect, fruitSelect}) => {
   // 过滤季节性水果
   const seasonalFruits = fruits.filter(fruit => fruit.seasonal);
 
@@ -20,7 +26,12 @@ const SeasonalFruitsPage: React.FC = () => {
         <h2 className="text-2xl font-semibold text-green-700 mb-6">本季推荐</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {seasonalFruits.slice(0, 2).map(fruit => (
-            <div key={fruit.id} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row">
+            <div
+              onClick={()=>{
+              fruitSelect(fruit)
+              redirect('details')
+            }}
+            key={fruit.id} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row">
               <div className="md:w-1/3">
                 <img 
                   src={fruit.image} 
@@ -46,7 +57,7 @@ const SeasonalFruitsPage: React.FC = () => {
       <h2 className="text-2xl font-semibold mb-6">更多季节水果</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {seasonalFruits.slice(2).map(fruit => (
-          <FruitCard key={fruit.id} fruit={fruit} />
+          <FruitCard key={fruit.id} fruit={fruit} redirect={redirect} fruitSelect={fruitSelect}/>
         ))}
       </div>
       
