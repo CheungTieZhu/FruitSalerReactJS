@@ -3,6 +3,7 @@ import { CartItem, Fruit } from '../types';
 
 interface CartContextType {
   cartItems: CartItem[];
+  addMultipleToCart:(fruit: Fruit, quantity: number) => void;
   addToCart: (fruit: Fruit) => void;
   removeFromCart: (id: number) => void;
   updateQuantity: (id: number, quantity: number) => void;
@@ -16,13 +17,27 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
+  const addMultipleToCart = (fruit: Fruit, quantity: number) => {
+    setCartItems(prevItems => {
+      const existingItem = prevItems.find(item => item.fruit.id === fruit.id);
+      if (existingItem) {
+        return prevItems.map(item =>
+          item.fruit.id === fruit.id
+            ? { ...item, quantity: quantity}
+            : item
+        );
+      }
+      return [...prevItems, { fruit, quantity: quantity }];
+    });
+  };
+
   const addToCart = (fruit: Fruit) => {
     setCartItems(prevItems => {
       const existingItem = prevItems.find(item => item.fruit.id === fruit.id);
       if (existingItem) {
-        return prevItems.map(item => 
-          item.fruit.id === fruit.id 
-            ? { ...item, quantity: item.quantity + 1 } 
+        return prevItems.map(item =>
+          item.fruit.id === fruit.id
+            ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       }
@@ -39,9 +54,9 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       removeFromCart(id);
       return;
     }
-    
-    setCartItems(prevItems => 
-      prevItems.map(item => 
+
+    setCartItems(prevItems =>
+      prevItems.map(item =>
         item.fruit.id === id ? { ...item, quantity } : item
       )
     );
@@ -62,6 +77,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   return (
     <CartContext.Provider value={{
       cartItems,
+      addMultipleToCart,
       addToCart,
       removeFromCart,
       updateQuantity,

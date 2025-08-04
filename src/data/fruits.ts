@@ -10,7 +10,33 @@ export const fruits: Fruit[] = [
     description: '脆甜多汁，富含维生素，来自日本的优质苹果品种。',
     stock: 100,
     unit: '斤',
-    seasonal: true
+    seasonal: true,
+    customerComment: [
+      {
+        id: 1,
+        user: '张三',
+        rating: 5,
+        date: '2023-10-15',
+        comment: '苹果非常新鲜，甜度刚好，包装也很用心，会继续回购！',
+        avatar: 'https://randomuser.me/api/portraits/men/32.jpg'
+      },
+      {
+        id: 2,
+        user: '李四',
+        rating: 4,
+        date: '2023-10-10',
+        comment: '味道不错，但有几个苹果有轻微磕碰，希望商家注意包装。',
+        avatar: 'https://randomuser.me/api/portraits/women/44.jpg'
+      },
+      {
+        id: 3,
+        user: '王五',
+        rating: 5,
+        date: '2023-10-05',
+        comment: '第二次购买了，家人很喜欢这个苹果的口感，脆甜多汁。',
+        avatar: 'https://randomuser.me/api/portraits/men/75.jpg'
+      }
+    ]
   },
   {
     id: 2,
@@ -21,7 +47,33 @@ export const fruits: Fruit[] = [
     description: '香甜软糯，富含钾元素，来自海南的热带水果。',
     stock: 150,
     unit: '斤',
-    seasonal: false
+    seasonal: false,
+        customerComment: [
+      {
+        id: 1,
+        user: '张三',
+        rating: 5,
+        date: '2023-10-15',
+        comment: '苹果非常新鲜，甜度刚好，包装也很用心，会继续回购！',
+        avatar: 'https://randomuser.me/api/portraits/men/32.jpg'
+      },
+      {
+        id: 2,
+        user: '李四',
+        rating: 4,
+        date: '2023-10-10',
+        comment: '味道不错，但有几个苹果有轻微磕碰，希望商家注意包装。',
+        avatar: 'https://randomuser.me/api/portraits/women/44.jpg'
+      },
+      {
+        id: 3,
+        user: '王五',
+        rating: 5,
+        date: '2023-10-05',
+        comment: '第二次购买了，家人很喜欢这个苹果的口感，脆甜多汁。',
+        avatar: 'https://randomuser.me/api/portraits/men/75.jpg'
+      }
+    ]
   },
   {
     id: 3,
@@ -32,7 +84,33 @@ export const fruits: Fruit[] = [
     description: '被誉为"水果皇后"，果肉洁白细嫩，甜美多汁。',
     stock: 80,
     unit: '斤',
-    seasonal: true
+    seasonal: true,
+    customerComment: [
+      {
+        id: 1,
+        user: '张三',
+        rating: 5,
+        date: '2023-10-15',
+        comment: '苹果非常新鲜，甜度刚好，包装也很用心，会继续回购！',
+        avatar: 'https://randomuser.me/api/portraits/men/32.jpg'
+      },
+      {
+        id: 2,
+        user: '李四',
+        rating: 4,
+        date: '2023-10-10',
+        comment: '味道不错，但有几个苹果有轻微磕碰，希望商家注意包装。',
+        avatar: 'https://randomuser.me/api/portraits/women/44.jpg'
+      },
+      {
+        id: 3,
+        user: '王五',
+        rating: 5,
+        date: '2023-10-05',
+        comment: '第二次购买了，家人很喜欢这个苹果的口感，脆甜多汁。',
+        avatar: 'https://randomuser.me/api/portraits/men/75.jpg'
+      }
+    ]
   },
   {
     id: 4,
@@ -43,7 +121,33 @@ export const fruits: Fruit[] = [
     description: '颗粒饱满，皮薄肉厚，甜度高，来自新疆的阳光雨露。',
     stock: 120,
     unit: '斤',
-    seasonal: true
+    seasonal: true,
+    customerComment: [
+      {
+        id: 1,
+        user: '张三',
+        rating: 5,
+        date: '2023-10-15',
+        comment: '苹果非常新鲜，甜度刚好，包装也很用心，会继续回购！',
+        avatar: 'https://randomuser.me/api/portraits/men/32.jpg'
+      },
+      {
+        id: 2,
+        user: '李四',
+        rating: 4,
+        date: '2023-10-10',
+        comment: '味道不错，但有几个苹果有轻微磕碰，希望商家注意包装。',
+        avatar: 'https://randomuser.me/api/portraits/women/44.jpg'
+      },
+      {
+        id: 3,
+        user: '王五',
+        rating: 5,
+        date: '2023-10-05',
+        comment: '第二次购买了，家人很喜欢这个苹果的口感，脆甜多汁。',
+        avatar: 'https://randomuser.me/api/portraits/men/75.jpg'
+      }
+    ]
   },
   {
     id: 5,
@@ -54,7 +158,33 @@ export const fruits: Fruit[] = [
     description: '酸甜可口，富含维生素C，四川特产水果。',
     stock: 200,
     unit: '斤',
-    seasonal: false
+    seasonal: false,
+        customerComment: [
+      {
+        id: 1,
+        user: '张三',
+        rating: 5,
+        date: '2023-10-15',
+        comment: '苹果非常新鲜，甜度刚好，包装也很用心，会继续回购！',
+        avatar: 'https://randomuser.me/api/portraits/men/32.jpg'
+      },
+      {
+        id: 2,
+        user: '李四',
+        rating: 4,
+        date: '2023-10-10',
+        comment: '味道不错，但有几个苹果有轻微磕碰，希望商家注意包装。',
+        avatar: 'https://randomuser.me/api/portraits/women/44.jpg'
+      },
+      {
+        id: 3,
+        user: '王五',
+        rating: 5,
+        date: '2023-10-05',
+        comment: '第二次购买了，家人很喜欢这个苹果的口感，脆甜多汁。',
+        avatar: 'https://randomuser.me/api/portraits/men/75.jpg'
+      }
+    ]
   },
   {
     id: 6,
@@ -65,7 +195,33 @@ export const fruits: Fruit[] = [
     description: '果肉细腻，清甜爽口，富含花青素，美容养颜。',
     stock: 90,
     unit: '个',
-    seasonal: false
+    seasonal: false,
+    customerComment: [
+      {
+        id: 1,
+        user: '张三',
+        rating: 5,
+        date: '2023-10-15',
+        comment: '苹果非常新鲜，甜度刚好，包装也很用心，会继续回购！',
+        avatar: 'https://randomuser.me/api/portraits/men/32.jpg'
+      },
+      {
+        id: 2,
+        user: '李四',
+        rating: 4,
+        date: '2023-10-10',
+        comment: '味道不错，但有几个苹果有轻微磕碰，希望商家注意包装。',
+        avatar: 'https://randomuser.me/api/portraits/women/44.jpg'
+      },
+      {
+        id: 3,
+        user: '王五',
+        rating: 5,
+        date: '2023-10-05',
+        comment: '第二次购买了，家人很喜欢这个苹果的口感，脆甜多汁。',
+        avatar: 'https://randomuser.me/api/portraits/men/75.jpg'
+      }
+    ]
   },
   {
     id: 7,
@@ -76,7 +232,33 @@ export const fruits: Fruit[] = [
     description: '肉质晶莹剔透，香甜多汁，有"果中皇后"的美誉。',
     stock: 70,
     unit: '斤',
-    seasonal: true
+    seasonal: true,
+        customerComment: [
+      {
+        id: 1,
+        user: '张三',
+        rating: 5,
+        date: '2023-10-15',
+        comment: '苹果非常新鲜，甜度刚好，包装也很用心，会继续回购！',
+        avatar: 'https://randomuser.me/api/portraits/men/32.jpg'
+      },
+      {
+        id: 2,
+        user: '李四',
+        rating: 4,
+        date: '2023-10-10',
+        comment: '味道不错，但有几个苹果有轻微磕碰，希望商家注意包装。',
+        avatar: 'https://randomuser.me/api/portraits/women/44.jpg'
+      },
+      {
+        id: 3,
+        user: '王五',
+        rating: 5,
+        date: '2023-10-05',
+        comment: '第二次购买了，家人很喜欢这个苹果的口感，脆甜多汁。',
+        avatar: 'https://randomuser.me/api/portraits/men/75.jpg'
+      }
+    ]
   },
   {
     id: 8,
@@ -87,7 +269,33 @@ export const fruits: Fruit[] = [
     description: '营养丰富，果肉细腻，被誉为"森林黄油"。',
     stock: 60,
     unit: '个',
-    seasonal: false
+    seasonal: false,
+        customerComment: [
+      {
+        id: 1,
+        user: '张三',
+        rating: 5,
+        date: '2023-10-15',
+        comment: '苹果非常新鲜，甜度刚好，包装也很用心，会继续回购！',
+        avatar: 'https://randomuser.me/api/portraits/men/32.jpg'
+      },
+      {
+        id: 2,
+        user: '李四',
+        rating: 4,
+        date: '2023-10-10',
+        comment: '味道不错，但有几个苹果有轻微磕碰，希望商家注意包装。',
+        avatar: 'https://randomuser.me/api/portraits/women/44.jpg'
+      },
+      {
+        id: 3,
+        user: '王五',
+        rating: 5,
+        date: '2023-10-05',
+        comment: '第二次购买了，家人很喜欢这个苹果的口感，脆甜多汁。',
+        avatar: 'https://randomuser.me/api/portraits/men/75.jpg'
+      }
+    ]
   }
 ];
 

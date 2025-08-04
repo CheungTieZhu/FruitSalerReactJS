@@ -1,3 +1,12 @@
+export interface Comment {
+  id: number;
+  user: string;
+  rating: number;
+  date: string;
+  comment: string;
+  avatar: string;
+}
+
 export interface Fruit {
   id: number;
   name: string;
@@ -8,6 +17,7 @@ export interface Fruit {
   stock: number;
   unit: string;
   seasonal: boolean;
+  customerComment: Comment[];
 }
 
 export interface CartItem {
